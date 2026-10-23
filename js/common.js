@@ -419,7 +419,7 @@
       document.addEventListener('keydown', (ev) => {
         if (ev.key === 'Escape' && header.classList.contains('is-open')) { setMenu(false); botao.focus(); }
       });
-      window.matchMedia('(min-width: 1120px)').addEventListener('change', (mq) => { if (mq.matches) setMenu(false); });
+      window.matchMedia('(min-width: 1240px)').addEventListener('change', (mq) => { if (mq.matches) setMenu(false); });
     }
 
     // Cabeçalho ganha fundo sólido depois que a página rola.

@@ -2,7 +2,7 @@
 
 <img src="img/favicon.svg" alt="" width="72" height="72">
 
-# Imigratech · Travessia
+# Travessia
 
 **Case de UX/UI e front-end: site e área do cliente de uma assessoria de imigração do Brasil para Portugal.**
 
@@ -10,7 +10,7 @@
 ![WCAG 2.2 AA](https://img.shields.io/badge/acessibilidade-WCAG%202.2%20AA-1d7347)
 ![Sem dependências](https://img.shields.io/badge/dependências%20de%20runtime-0-555a6e)
 
-[Ver o protótipo](https://fernandopinhel.github.io/Imigratech/) ·
+[Ver o protótipo](https://fernandopinhel.github.io/Travessia/) ·
 [Como rodar](#como-rodar-localmente) ·
 [O case](#o-case)
 
@@ -244,8 +244,8 @@ ao `file://`, porque a CSP e o sprite de ícones se comportam de forma diferente
 arquivos locais.
 
 ```bash
-git clone https://github.com/fernandopinhel/Imigratech.git
-cd Imigratech
+git clone https://github.com/fernandopinhel/Travessia.git
+cd Travessia
 
 # Opção 1: Python
 python3 -m http.server 8080
@@ -271,7 +271,7 @@ npx htmlhint@1 "*.html"
 O site é publicado direto da branch `main` (**Settings → Pages → Deploy from a branch**,
 pasta `/`). O arquivo `.nojekyll` faz o GitHub servir os arquivos como estão.
 
-Endereço: <https://fernandopinhel.github.io/Imigratech/>
+Endereço: <https://fernandopinhel.github.io/Travessia/>
 
 ---
 

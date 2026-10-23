@@ -7,7 +7,7 @@ dados pessoais reais.
 ## Reportando uma vulnerabilidade
 
 Se encontrar um problema de segurança, abra um
-[security advisory privado](https://github.com/fernandopinhel/Imigratech/security/advisories/new)
+[security advisory privado](https://github.com/fernandopinhel/Travessia/security/advisories/new)
 em vez de uma issue pública.
 
 ## Medidas adotadas
