@@ -1,247 +1,353 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="scss/estilo.css">
-    <!-- Google Fontes -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#10142a">
+    <meta name="description" content="Case de UX/UI: site e área do cliente da Travessia, assessoria fictícia de imigração do Brasil para Portugal.">
+    <title>Travessia | Imigração para Portugal, passo a passo</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">    
-    <!-- Fontawesome -->
-    <link href="libs/fontawesome-free-5.15.4-web/css/all.css" rel="stylesheet">
-    <!-- Libs de animações -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <title>IMIGRATECH</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+    <link rel="stylesheet" href="css/site.css">
   </head>
   <body>
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top">
-            <div class="container">
-                <a class="navbar-brand" href="#"><div class="logo-header"></div></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <div class="hamburger-lines navbar-toggler-icon">
-                        <input class='input-menu' type='checkbox'/>
-                        <span class="line line1"></span>
-                        <span class="line line2"></span>
-                        <span class="line line3"></span>
-                    </div>   
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#section-sobre">Sobre nós</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#section-como-trabalhamos">Como trabalhamos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#section-pronto-pra-imigrar">Iniciar imigração</a>
-                        </li>                    
-                    </ul>                
-                </div>
-            </div>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header on-ink">
+      <div class="container site-header__bar">
+        <a class="brand" href="index.html">
+          <img class="brand__mark" src="img/favicon.svg" alt="" width="40" height="40">
+          <span class="brand__text">
+            <span class="brand__name">Travessia</span>
+            <span class="brand__sub">Imigração para Portugal</span>
+          </span>
+        </a>
+        <nav class="nav" id="menu" aria-label="Principal">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#caminhos">Caminhos</a></li>
+            <li><a class="nav__link" href="#como-funciona">Como funciona</a></li>
+            <li><a class="nav__link" href="caminho.html">Simulador</a></li>
+            <li><a class="nav__link" href="#duvidas">Dúvidas</a></li>
+            <li><a class="nav__link" href="#contato">Contato</a></li>
+            <li class="nav__cta-mobile"><a class="btn btn--outline-ink btn--block" href="entrar.html">Área do cliente</a></li>
+          </ul>
         </nav>
+        <div class="site-header__cta">
+          <a class="btn btn--outline-ink btn--sm" href="entrar.html" data-area-cliente><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-user"/></svg><span>Área do cliente</span></a>
+          <a class="btn btn--sun btn--sm" href="agendar.html" aria-label="Agendar conversa"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-calendar"/></svg><span>Agendar conversa</span></a>
+        </div>
+        <button class="btn btn--icon nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-menu"/></svg></button>
+      </div>
     </header>
-    <section class="intro">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h6 class="sub-chamada">Conectando sonho à realidade</h6>
-                    <h1 class="chamada animate__animated animate__pulse">Realize seu sonho de morar fora do país!</h1>
-                    <h6 class="sub-chamada">Conosco o processo é leve, transparente e
-                        70% mais rápido que o comum.</h6>
-                    <a class="btn btn-primary animate__animated animate__bounce animate__delay-2s" href="#section-pronto-pra-imigrar">
-                        Iniciar imigração
-                    </a>
-                </div>
+
+    <main id="conteudo" tabindex="-1">
+      <!-- Topo -->
+      <section class="hero on-ink tiles" aria-labelledby="hero-titulo">
+        <div class="container hero__grid">
+          <div>
+            <p class="eyebrow">Do Brasil para Portugal</p>
+            <h1 id="hero-titulo">Sua travessia para Portugal, com <em class="destaque">cada passo</em> à vista.</h1>
+            <p class="lead">Cidadania, vistos e residência com uma equipe que cuida da papelada e mostra, numa área só sua, em que pé está o seu processo.</p>
+            <div class="hero__actions">
+              <a class="btn btn--sun" href="caminho.html">Descobrir meu caminho <svg class="icon icon-move" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-arrow-right"/></svg></a>
+              <a class="btn btn--outline-ink" href="agendar.html">Agendar conversa sem custo</a>
             </div>
+            <ul class="hero__trust">
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-check-circle"/></svg> Primeira conversa sem custo</li>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-check-circle"/></svg> Documentos enviados pela área do cliente</li>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-check-circle"/></svg> Equipe em Lisboa e São Paulo</li>
+            </ul>
+          </div>
+
+          <div class="hero__art">
+            <svg class="hero__route" viewBox="0 0 600 260" aria-hidden="true" focusable="false">
+              <path d="M10 240C120 60 380 0 590 60" fill="none" stroke="#9db4ff" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="1 12" opacity=".7"/>
+              <circle cx="10" cy="240" r="6" fill="#9db4ff"/>
+              <circle cx="590" cy="60" r="6" fill="#ff7a59"/>
+            </svg>
+            <div class="pass" role="img" aria-label="Ilustração: cartão de embarque de São Paulo para Lisboa, com a etapa 1 de 5, reunião inicial.">
+              <div class="pass__main">
+                <div class="pass__top">
+                  <span class="pass__brand"><img src="img/favicon.svg" alt="" width="26" height="26"> Travessia</span>
+                  <span class="pass__class">Cartão de embarque</span>
+                </div>
+                <div class="pass__route">
+                  <span class="pass__city"><span class="pass__code">GRU</span><span class="pass__name">São Paulo</span></span>
+                  <span class="pass__line"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-plane"/></svg></span>
+                  <span class="pass__city"><span class="pass__code">LIS</span><span class="pass__name">Lisboa</span></span>
+                </div>
+                <dl class="pass__fields">
+                  <div><dt>Passageiro</dt><dd>Você</dd></div>
+                  <div><dt>Caminho</dt><dd>O seu</dd></div>
+                  <div><dt>Portão</dt><dd>Reunião inicial</dd></div>
+                </dl>
+              </div>
+              <div class="pass__stub">
+                <div>
+                  <span class="pass__stub-label">Etapa</span>
+                  <span class="pass__stub-value">1/5</span>
+                </div>
+                <div class="pass__barcode"></div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-    <section class="sobre" id="section-sobre">
+      </section>
+
+      <!-- Números -->
+      <section class="section--tight" aria-labelledby="numeros-titulo">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-sm-12">
-                    <div class="passaportes animate__animated animate__pulse" data-aos="fade-right"></div>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <h2 data-aos="fade-left">Sobre nós</h2>
-                    <p data-aos="fade-left">Fornecemos soluções para todas as suas necessidades imigratórias, através de ferramentas tecnológicas e inovadoras.</p>
-                    <h3 data-aos="fade-left">Arrume suas malas, nós cuidamos de tudo!</h3>
-                    <p data-aos="fade-left">Temos mais de 10 anos de experiência no mercado. Atuamos junto aos órgãos públicos responsáveis pelas documentações. Somos indicados por todos os clientes que fizeram o processo conosco.</p>
-                    <h3 data-aos="fade-left">Benefícios Estratégicos</h3>
-                    <p data-aos="fade-left">Equipe altamente treinada e especializada em nacionalidade e diversos outros processos imigratórios.</p>
-                </div>
-            </div>
+          <h2 id="numeros-titulo" class="sr-only">A Travessia em números</h2>
+          <ul class="stats" data-reveal>
+            <li class="stat">
+              <svg class="icon stat__stamp" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-stamp"/></svg>
+              <span class="stat__value"><span data-count="12">12</span> mil</span>
+              <span class="stat__label">pessoas atendidas</span>
+            </li>
+            <li class="stat">
+              <svg class="icon stat__stamp" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-stamp"/></svg>
+              <span class="stat__value"><span data-count="10">10</span> anos</span>
+              <span class="stat__label">de experiência com Portugal</span>
+            </li>
+            <li class="stat">
+              <svg class="icon stat__stamp" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-stamp"/></svg>
+              <span class="stat__value"><span data-count="6">6</span> caminhos</span>
+              <span class="stat__label">de cidadania, visto e residência</span>
+            </li>
+            <li class="stat">
+              <svg class="icon stat__stamp" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-stamp"/></svg>
+              <span class="stat__value"><span data-count="2">2</span> escritórios</span>
+              <span class="stat__label">em Lisboa e em São Paulo</span>
+            </li>
+          </ul>
         </div>
-    </section>
-    <section class="qualidade" id="section-qualidade">
+      </section>
+
+      <!-- Caminhos -->
+      <section class="section section--paper2" id="caminhos" aria-labelledby="caminhos-titulo">
         <div class="container">
-            <div class="row justify-content-center" data-aos="fade">
-                <div class="col-lg-3 col-sm-12">
-                    <div class="contador">
-                        <span class="first-span">+</span>
-                        <span class="counter-up" data-count-to="12"></span>
-                        <span class="last-span">mil</span>
-                    </div>
-                    <h5>Clientes satisfeitos</h5>
-                </div>
-                <div class="col-lg-3 col-sm-12">
-                    <div class="brasao-pt animate__animated animate__pulse"></div>
-                </div>
-                <div class="col-lg-3 col-sm-12">
-                    <div class="contador">
-                        <span class="counter-up" data-count-to="10"></span>
-                        <span>+</span>
-                    </div>
-                    <h5>Anos de experiência</h5>
-                </div>
-            </div>
+          <div class="section__head" data-reveal>
+            <p class="eyebrow">Caminhos</p>
+            <h2 id="caminhos-titulo">Cada história pede um caminho diferente</h2>
+            <p class="lead">Do passaporte europeu por descendência ao visto para quem trabalha a distância. Escolha um tema ou veja todos.</p>
+          </div>
+          <div class="filters" role="group" aria-label="Filtrar caminhos por tema" id="filtros-caminhos">
+            <button class="chip" type="button" data-grupo="" aria-pressed="true">Todos</button>
+            <button class="chip" type="button" data-grupo="familia" aria-pressed="false">Família e cidadania</button>
+            <button class="chip" type="button" data-grupo="trabalho" aria-pressed="false">Trabalho</button>
+            <button class="chip" type="button" data-grupo="renda" aria-pressed="false">Renda e aposentadoria</button>
+            <button class="chip" type="button" data-grupo="estudo" aria-pressed="false">Estudo</button>
+          </div>
+          <ul class="paths" id="lista-caminhos"></ul>
         </div>
-    </section>
-    <section class="como-trabalhamos" id="section-como-trabalhamos">
+      </section>
+
+      <!-- Como funciona -->
+      <section class="section on-ink tiles" id="como-funciona" aria-labelledby="como-titulo">
         <div class="container">
-            <div class="row mb-5" data-aos="fade-right">
-                <div class="col-lg-12 col-sm-12">
-                    <h2>Como trabalhamos</h2>
-                    <h5>Como obter: Nacionalidade, visto, autorização de residência e trabalho, entre outros...</h5>
-                    <h5>Todo o processo poderá ser acompanhado por si!</h5>
-               </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-12">
-                    <div class="cards-etapas animate__animated animate__bounce animate__delay-800ms" data-aos="fade-up">
-                        <span class="icon-reuniao-inicial"></span>
-                        <h4>Reunião Inicial</h4>
-                        <p>Apresentação do funcionamento de todo o processo e comoacompanhá-lo.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="cards-etapas animate__animated animate__bounce animate__delay-2s" data-aos="fade-up">
-                        <span class="icon-envio-docs"></span>
-                        <h4>Envie os Documentos Solicitados</h4>
-                        <p>Envio dos documentos solicitados na reunião inicial conforme indicação.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="cards-etapas animate__animated animate__bounce animate__delay-3s" data-aos="fade-up">
-                        <span class="icon-analise-doc"></span>
-                        <h4>Análise Documental</h4>
-                        <p>Validação documental por parte da equipe técnica.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-12">
-                    <div class="cards-etapas animate__animated animate__bounce animate__delay-4s" data-aos="fade-up">
-                        <span class="icon-entrada-processo"></span>
-                        <h4>Entrada do Processo</h4>
-                        <p>Entrada do processo junto aos órgãos legais.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-12">
-                    <div class="cards-etapas animate__animated animate__bounce animate__delay-5s" data-aos="fade-up">
-                        <span class="icon-receba-doc"></span>
-                        <h4>Receba seu documento</h4>
-                        <p>Indicação de que o documento final está pronto.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-12"></div>
-            </div>
+          <div class="section__head" data-reveal>
+            <p class="eyebrow">Como funciona</p>
+            <h2 id="como-titulo">Cinco etapas, e você acompanha todas</h2>
+            <p class="lead">Nada de ficar sem notícia. Cada etapa aparece na sua área do cliente, com o que já foi feito e o que vem a seguir.</p>
+          </div>
+          <ol class="steps" data-reveal>
+            <li class="step"><span class="step__num" aria-hidden="true"></span><div><h3>Reunião inicial</h3><p>Entendemos o seu caso, confirmamos o caminho e montamos o plano.</p></div></li>
+            <li class="step"><span class="step__num" aria-hidden="true"></span><div><h3>Envio de documentos</h3><p>Você envia os documentos pela área do cliente, no seu tempo.</p></div></li>
+            <li class="step"><span class="step__num" aria-hidden="true"></span><div><h3>Análise documental</h3><p>Nossa equipe confere cada documento antes do pedido.</p></div></li>
+            <li class="step"><span class="step__num" aria-hidden="true"></span><div><h3>Entrada do processo</h3><p>Damos entrada no consulado, na AIMA ou no IRN, conforme o caminho.</p></div></li>
+            <li class="step"><span class="step__num" aria-hidden="true"></span><div><h3>Documento pronto</h3><p>Avisamos quando o visto, a residência ou a cidadania sair.</p></div></li>
+          </ol>
         </div>
-    </section>
-    <section class="pronto-pra-imigrar" data-aos="fade" id="section-pronto-pra-imigrar">
+      </section>
+
+      <!-- Área do cliente -->
+      <section class="section" aria-labelledby="area-titulo">
+        <div class="container split">
+          <div data-reveal>
+            <p class="eyebrow">Área do cliente</p>
+            <h2 id="area-titulo">O seu processo, sem precisar perguntar</h2>
+            <p class="lead">Envie documentos, veja o que foi aprovado e converse com a sua consultora num lugar só.</p>
+            <ul class="checklist">
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-check"/></svg> <span>Lista de documentos do seu caminho, com a explicação de cada um.</span></li>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-check"/></svg> <span>Aviso na hora quando falta algo, com o motivo e como corrigir.</span></li>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-check"/></svg> <span>Histórico de tudo o que aconteceu, com data e hora.</span></li>
+            </ul>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="entrar.html">Ver a área do cliente <svg class="icon icon-move" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-arrow-right"/></svg></a>
+            </div>
+          </div>
+          <div class="portal-peek" data-reveal aria-hidden="true">
+            <div class="portal-peek__row">
+              <span class="doc__icon"><svg class="icon" focusable="false"><use href="img/icons.svg#i-check-circle"/></svg></span>
+              <div><strong>Passaporte</strong><small>Aprovado há 6 dias</small></div>
+              <span class="badge badge--sucesso">Aprovado</span>
+            </div>
+            <div class="portal-peek__row">
+              <span class="doc__icon"><svg class="icon" focusable="false"><use href="img/icons.svg#i-file"/></svg></span>
+              <div><strong>Comprovantes de renda</strong><small>Enviado ontem</small></div>
+              <span class="badge badge--info">Em análise</span>
+            </div>
+            <div class="portal-peek__row">
+              <span class="doc__icon"><svg class="icon" focusable="false"><use href="img/icons.svg#i-alert"/></svg></span>
+              <div><strong>Antecedentes criminais</strong><small>Falta a apostila de Haia</small></div>
+              <span class="badge badge--erro">Ajustar</span>
+            </div>
+            <div class="portal-peek__row">
+              <span class="person__avatar">HD</span>
+              <div><strong>Helena, sua consultora</strong><small>“Deixei a explicação no documento.”</small></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Simulador -->
+      <section class="section--tight" aria-labelledby="sim-titulo">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-sm-12">
-                     <h2 data-aos="fade-right">Pronto para imigrar?</h2>
-                     <p data-aos="fade-right">Vamos ajudar você a morar em Portugal ou em qualquer outro país da União Europeia!</p>
-                     <p data-aos="fade-right">Em breve estaremos lançando um aplicativo que irá ajudar você e sua família a se mudar para o país com toda a segurança, de forma legal e contando com total acessória da ImigraTech para tirar todas as suas dúvidas.</p>
-                     <p data-aos="fade-right">A tranquilidade de Portugal espera por você!</p>
-                </div>
-                <div class="col-lg-6 col-sm-12">
-                    <div class="brasao-br" data-aos="fade-left"></div>
-                </div>
-             </div>
-        </div>
-    </section>
-    <section class="chat" data-aos="fade-up">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                     <h2>CHAT AQUI</h2>
-                </div>
-             </div>
-        </div>
-    </section>
-    <footer data-aos="fade-up">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-12">
-                    <div id="map"></div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col d-flex justify-content-center">
-                                <div class="logo-footer"></div> 
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class=" d-flex justify-content-center">
-                                    <div class="contato">
-                                        <h5>CONTATO</h5>
-                                        <p>(+351) 211 234 253  | (+351) 21 123 4253 contato@imigratech.pt</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="cta-band on-ink tiles" data-reveal>
+            <div>
+              <h2 id="sim-titulo">Não sabe por onde começar?</h2>
+              <p class="lead">Responda 6 perguntas rápidas e veja o caminho que combina com você, com a lista de documentos.</p>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="copyright">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <p>Copyright © 2023 - IMIGRATECH</p>
-                                </div>
-                                <div class="col">
-                                    <div class="scrol-top">
-                                        <a href="#" title="Subir para o cabeçalho">
-                                            <i class="fas fa-chevron-up"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="cta-band__actions">
+              <a class="btn btn--sun" href="caminho.html">Fazer o simulador <svg class="icon icon-move" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-arrow-right"/></svg></a>
             </div>
+          </div>
         </div>
+      </section>
+
+      <!-- Dúvidas -->
+      <section class="section" id="duvidas" aria-labelledby="duvidas-titulo">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <p class="eyebrow">Dúvidas</p>
+            <h2 id="duvidas-titulo">Perguntas que sempre aparecem</h2>
+          </div>
+          <div class="faq-search field">
+            <label class="sr-only" for="faq-busca">Buscar nas dúvidas</label>
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-search"/></svg>
+            <input id="faq-busca" type="search" placeholder="Buscar, por exemplo: apostila" autocomplete="off" aria-describedby="faq-contagem">
+          </div>
+          <p id="faq-contagem" class="sr-only" aria-live="polite"></p>
+          <div class="faq" id="faq"></div>
+          <p class="form-note">
+            <svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-chat"/></svg>
+            <span>Não achou o que procurava? <button class="link-button link-button--paper" type="button" data-abrir-chat>Pergunte para a Lia</button> ou <a href="#contato">mande uma mensagem</a>.</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- Contato -->
+      <section class="section section--paper2" id="contato" aria-labelledby="contato-titulo">
+        <div class="container split">
+          <div data-reveal>
+            <p class="eyebrow">Contato</p>
+            <h2 id="contato-titulo">Conte um pouco da sua história</h2>
+            <p class="lead">Respondemos em até 1 dia útil. Se preferir, agende direto uma conversa por vídeo.</p>
+            <ul class="checklist">
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-phone"/></svg> <span>+351 210 000 000 (Lisboa)<br>+55 11 0000-0000 (São Paulo)</span></li>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-mail"/></svg> <span>ola@travessia.example</span></li>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-clock"/></svg> <span>Segunda a sexta, das 9h às 18h no horário de cada cidade</span></li>
+            </ul>
+          </div>
+
+          <div class="form-card" id="contato-caixa">
+            <form id="contato-form" novalidate>
+              <div class="form-grid">
+                <div class="field span-2">
+                  <label for="ct-nome">Nome completo</label>
+                  <input id="ct-nome" name="nome" type="text" required data-rules="nome" autocomplete="name">
+                </div>
+                <div class="field">
+                  <label for="ct-email">E-mail</label>
+                  <input id="ct-email" name="email" type="email" required data-rules="email" autocomplete="email" inputmode="email">
+                </div>
+                <div class="field">
+                  <label for="ct-tel">Telefone ou WhatsApp <span class="field__opt">(opcional)</span></label>
+                  <input id="ct-tel" name="telefone" type="tel" data-rules="telefone" data-mask="telefone" autocomplete="tel" inputmode="tel">
+                </div>
+                <div class="field span-2">
+                  <label for="ct-assunto">Assunto</label>
+                  <select id="ct-assunto" name="assunto" required data-msg-required="Escolha o assunto da mensagem.">
+                    <option value="">Escolha uma opção</option>
+                    <option>Quero começar meu processo</option>
+                    <option>Já sou cliente</option>
+                    <option>Empresas e parcerias</option>
+                    <option>Outro assunto</option>
+                  </select>
+                </div>
+                <div class="field span-2">
+                  <label for="ct-msg">Mensagem</label>
+                  <p class="field__hint" id="ct-msg-dica">Por exemplo: quem vai com você, quando pensa em ir e o que já tem de documentos.</p>
+                  <textarea id="ct-msg" name="mensagem" required aria-describedby="ct-msg-dica" maxlength="1500" data-msg-required="Escreva a sua mensagem."></textarea>
+                </div>
+                <div class="field span-2">
+                  <label class="check" for="ct-ok">
+                    <input id="ct-ok" name="consentimento" type="checkbox" required data-msg-required="Para responder, precisamos da sua autorização para usar esses dados.">
+                    <span>Autorizo a Travessia a usar esses dados só para responder a esta mensagem.</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-actions">
+                <button class="btn btn--primary" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-send"/></svg> Enviar mensagem</button>
+              </div>
+              <p class="form-note"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-lock"/></svg> <span>Este é um protótipo: nada do que você digita sai do seu navegador.</span></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer on-ink tiles">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div>
+            <a class="brand" href="index.html">
+              <img class="brand__mark" src="img/favicon.svg" alt="" width="40" height="40">
+              <span class="brand__text"><span class="brand__name">Travessia</span><span class="brand__sub">Imigração para Portugal</span></span>
+            </a>
+            <p class="block">Assessoria de cidadania, vistos e residência em Portugal, do primeiro documento ao desembarque.</p>
+            <p class="case-note"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-info"/></svg> <span>Case de portfólio. A Travessia é uma marca fictícia, e os contatos e números são de exemplo.</span></p>
+          </div>
+          <nav aria-labelledby="rodape-navegue">
+            <h2 id="rodape-navegue">Navegue</h2>
+            <ul>
+              <li><a href="index.html#caminhos">Caminhos</a></li>
+              <li><a href="index.html#como-funciona">Como funciona</a></li>
+              <li><a href="caminho.html">Simulador de caminho</a></li>
+              <li><a href="index.html#duvidas">Dúvidas</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="rodape-atendimento">
+            <h2 id="rodape-atendimento">Atendimento</h2>
+            <ul>
+              <li><a href="agendar.html">Agendar conversa</a></li>
+              <li><a href="entrar.html">Área do cliente</a></li>
+              <li><a href="index.html#contato">Fale com a gente</a></li>
+            </ul>
+          </nav>
+          <div>
+            <h2>Escritórios</h2>
+            <ul>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-pin"/></svg> <span>Av. da Liberdade, 000<br>Lisboa, Portugal</span></li>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-pin"/></svg> <span>Av. Paulista, 0000<br>São Paulo, Brasil</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p>© <span data-ano>2026</span> Travessia · Case de UX/UI por <a href="https://fernandopinhel.com.br">Fernando Pinhel</a></p>
+          <p><button class="link-button" type="button" data-restaurar>Restaurar dados de exemplo</button> · <a href="#conteudo">Voltar ao topo</a></p>
+        </div>
+      </div>
     </footer>
 
-    <!-- Bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>        
-    <!-- Google Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly" defer></script>
-    <!-- Scripts js-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="js/config.js"></script>
-    <!-- Scripts de animações-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
-    </script>
+    <script src="js/common.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/home.js"></script>
   </body>
 </html>
