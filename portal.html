@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#10142a">
+    <meta name="description" content="Case de UX/UI: site e área do cliente da Travessia, assessoria fictícia de imigração do Brasil para Portugal.">
+    <title>Meu processo | Travessia</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap">
+    <link rel="stylesheet" href="css/site.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header class="site-header on-ink">
+      <div class="container site-header__bar">
+        <a class="brand" href="index.html">
+          <img class="brand__mark" src="img/favicon.svg" alt="" width="40" height="40">
+          <span class="brand__text">
+            <span class="brand__name">Travessia</span>
+            <span class="brand__sub">Imigração para Portugal</span>
+          </span>
+        </a>
+        <nav class="nav" id="menu" aria-label="Principal">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="index.html#caminhos">Caminhos</a></li>
+            <li><a class="nav__link" href="index.html#como-funciona">Como funciona</a></li>
+            <li><a class="nav__link" href="caminho.html">Simulador</a></li>
+            <li><a class="nav__link" href="index.html#duvidas">Dúvidas</a></li>
+            <li><a class="nav__link" href="index.html#contato">Contato</a></li>
+            <li class="nav__cta-mobile"><a class="btn btn--outline-ink btn--block" href="entrar.html">Área do cliente</a></li>
+          </ul>
+        </nav>
+        <div class="site-header__cta">
+          <a class="btn btn--outline-ink btn--sm" href="entrar.html" data-area-cliente><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-user"/></svg><span>Área do cliente</span></a>
+          <a class="btn btn--sun btn--sm" href="agendar.html" aria-label="Agendar conversa"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-calendar"/></svg><span>Agendar conversa</span></a>
+        </div>
+        <button class="btn btn--icon nav-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-menu"/></svg></button>
+      </div>
+    </header>
+
+    <main id="conteudo" tabindex="-1">
+      <section class="portal-hero on-ink tiles" aria-labelledby="portal-titulo">
+        <div class="container portal-hero__top">
+          <div>
+            <p class="eyebrow">Área do cliente</p>
+            <h1 id="portal-titulo">Olá!</h1>
+            <ul class="portal-hero__meta" id="portal-meta"></ul>
+          </div>
+          <div class="portal-hero__actions">
+            <button class="btn btn--outline-ink btn--sm" type="button" id="sair"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-logout"/></svg> Sair</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="container portal-main">
+        <section class="journey" aria-labelledby="jornada-titulo">
+          <div class="journey__head">
+            <h2 id="jornada-titulo">Sua jornada</h2>
+            <span class="badge badge--info" id="jornada-etapa"></span>
+          </div>
+          <ol id="jornada"></ol>
+        </section>
+
+        <div class="portal-grid">
+          <div>
+            <section class="card" id="documentos" aria-labelledby="docs-titulo">
+              <div class="card__head">
+                <h2 id="docs-titulo">Documentos</h2>
+              </div>
+              <div id="docs-conteudo"></div>
+              <input type="file" id="arquivo" class="sr-only" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" tabindex="-1" aria-hidden="true">
+            </section>
+
+            <section class="card" id="conversa" aria-labelledby="conversa-titulo">
+              <div class="card__head">
+                <h2 id="conversa-titulo">Conversa</h2>
+              </div>
+              <div class="messages" id="mensagens" role="log" aria-live="polite" aria-labelledby="conversa-titulo" tabindex="0"></div>
+              <form class="msg-form" id="msg-form" novalidate>
+                <div class="field">
+                  <label class="sr-only" for="msg-texto">Sua mensagem</label>
+                  <textarea id="msg-texto" name="texto" rows="2" maxlength="1000" placeholder="Escreva para a sua consultora" data-msg-required="Escreva a mensagem antes de enviar." required></textarea>
+                </div>
+                <button class="btn btn--primary" type="submit"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-send"/></svg> Enviar</button>
+              </form>
+            </section>
+          </div>
+
+          <div>
+            <section class="card" aria-labelledby="equipe-titulo">
+              <h2 id="equipe-titulo" class="sr-only">Sua equipe e a reunião</h2>
+              <div id="equipe"></div>
+            </section>
+
+            <section class="card" aria-labelledby="hist-titulo">
+              <h2 id="hist-titulo">Histórico</h2>
+              <ol class="timeline" id="historico"></ol>
+            </section>
+
+            <section class="card" aria-labelledby="demo-titulo">
+              <h2 id="demo-titulo">Modo demonstração</h2>
+              <div id="demo"></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <dialog class="modal" id="confirmar" aria-labelledby="confirmar-titulo" aria-describedby="confirmar-texto">
+      <form method="dialog" class="modal__body">
+        <h2 id="confirmar-titulo">Confirmar</h2>
+        <p id="confirmar-texto"></p>
+        <div class="modal__actions">
+          <button class="btn btn--ghost" value="nao" type="submit">Cancelar</button>
+          <button class="btn btn--primary" value="sim" type="submit" id="confirmar-ok">Confirmar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <footer class="site-footer on-ink tiles">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div>
+            <a class="brand" href="index.html">
+              <img class="brand__mark" src="img/favicon.svg" alt="" width="40" height="40">
+              <span class="brand__text"><span class="brand__name">Travessia</span><span class="brand__sub">Imigração para Portugal</span></span>
+            </a>
+            <p class="site-footer__about">Assessoria de cidadania, vistos e residência em Portugal, do primeiro documento ao desembarque.</p>
+            <p class="case-note"><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-info"/></svg> <span>Case de portfólio. A Travessia é uma marca fictícia, e os contatos e números são de exemplo.</span></p>
+          </div>
+          <nav aria-labelledby="rodape-navegue">
+            <h2 id="rodape-navegue">Navegue</h2>
+            <ul>
+              <li><a href="index.html#caminhos">Caminhos</a></li>
+              <li><a href="index.html#como-funciona">Como funciona</a></li>
+              <li><a href="caminho.html">Simulador de caminho</a></li>
+              <li><a href="index.html#duvidas">Dúvidas</a></li>
+            </ul>
+          </nav>
+          <nav aria-labelledby="rodape-atendimento">
+            <h2 id="rodape-atendimento">Atendimento</h2>
+            <ul>
+              <li><a href="agendar.html">Agendar conversa</a></li>
+              <li><a href="entrar.html">Área do cliente</a></li>
+              <li><a href="index.html#contato">Fale com a gente</a></li>
+            </ul>
+          </nav>
+          <div>
+            <h2>Escritórios</h2>
+            <ul>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-pin"/></svg> <span>Av. da Liberdade, 000<br>Lisboa, Portugal</span></li>
+              <li><svg class="icon" aria-hidden="true" focusable="false"><use href="img/icons.svg#i-pin"/></svg> <span>Av. Paulista, 0000<br>São Paulo, Brasil</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="site-footer__bottom">
+          <p>© <span data-ano>2026</span> Travessia · Case de UX/UI por <a href="https://fernandopinhel.com.br">Fernando Pinhel</a></p>
+          <p><button class="link-button" type="button" data-restaurar>Restaurar dados de exemplo</button> · <a href="#conteudo">Voltar ao topo</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/common.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/portal.js"></script>
+  </body>
+</html>
