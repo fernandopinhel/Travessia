@@ -6,6 +6,7 @@
 
 **Case de UX/UI e front-end: site e área do cliente de uma assessoria de imigração do Brasil para Portugal.**
 
+[![CI](https://github.com/fernandopinhel/Travessia/actions/workflows/ci.yml/badge.svg)](https://github.com/fernandopinhel/Travessia/actions/workflows/ci.yml)
 ![HTML, CSS e JS puros](https://img.shields.io/badge/stack-HTML%20·%20CSS%20·%20JS%20puros-2643b8)
 ![WCAG 2.2 AA](https://img.shields.io/badge/acessibilidade-WCAG%202.2%20AA-1d7347)
 ![Sem dependências](https://img.shields.io/badge/dependências%20de%20runtime-0-555a6e)
@@ -268,10 +269,16 @@ npx htmlhint@1 "*.html"
 
 ## Publicação no GitHub Pages
 
-O site é publicado direto da branch `main` (**Settings → Pages → Deploy from a branch**,
-pasta `/`). O arquivo `.nojekyll` faz o GitHub servir os arquivos como estão.
+O workflow `.github/workflows/pages.yml` publica o site a cada push na `main`. Para ativar:
 
-Endereço: <https://fernandopinhel.github.io/Travessia/>
+1. No GitHub, abra **Settings → Pages**.
+2. Em **Build and deployment → Source**, escolha **GitHub Actions**.
+3. Faça um push na `main` ou rode o workflow em **Actions → Deploy GitHub Pages**.
+
+O endereço será <https://fernandopinhel.github.io/Travessia/>.
+
+O workflow `.github/workflows/ci.yml` valida o HTML com o HTMLHint e bloqueia scripts,
+handlers e estilos inline, que a CSP não deixaria rodar.
 
 ---
 
@@ -283,6 +290,7 @@ Endereço: <https://fernandopinhel.github.io/Travessia/>
 - **Sem JavaScript nem CSS inline**, e nenhum `innerHTML`: todo texto entra como `textContent`.
 - **Sem chaves de API**: a versão original carregava o Google Maps com uma chave no HTML; o mapa saiu.
 - **Referrer Policy** `strict-origin-when-cross-origin` e `noindex` para buscadores.
+- **Dependabot** monitora as GitHub Actions.
 
 Veja também o [SECURITY.md](SECURITY.md).
 
@@ -300,7 +308,7 @@ Veja também o [SECURITY.md](SECURITY.md).
 
 ## Próximos passos
 
-- [ ] CI com HTMLHint, testes de fluxo (Playwright) e auditoria de acessibilidade (axe).
+- [ ] Testes de fluxo (Playwright) e auditoria de acessibilidade (axe) no CI.
 - [ ] Versão em inglês e em português europeu.
 - [ ] Planos para a família inteira, com documentos por pessoa.
 - [ ] Lembretes de validade (passaporte, antecedentes criminais, seguro).
@@ -317,6 +325,7 @@ Veja também o [SECURITY.md](SECURITY.md).
 - Simulador de caminho, agendamento, área do cliente com envio de documentos e assistente Lia.
 - Acessibilidade revisada para a WCAG 2.2 AA, verificada com axe.
 - Saíram Bootstrap, jQuery, AOS, Animate.css, Font Awesome, Google Maps e as imagens PNG.
+- CI com HTMLHint e bloqueio de código inline, publicação no GitHub Pages por workflow, Dependabot e `SECURITY.md`.
 
 ### 2023-05: Versão original
 
